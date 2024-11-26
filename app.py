@@ -21,14 +21,15 @@ from sklearn.preprocessing import (OneHotEncoder,
                                   )
 
 
-st.title('Flight Price prediction with linear regression')
-st.subheader('using machine learning')
+st.markdown(""" <h1 style='text-align: center;'>Price Flight Predictions</h1> """, unsafe_allow_html=True)
+st.markdown(""" <h2 style='text-align: center;'>Using Machine learning </h2> """, unsafe_allow_html=True)
+
 st.write('Jessica Miramontes & Daniel Alvizo')
 st.write("""
-The purpose of this study is to ...         
-         
-         
-         
+The purpose of this study is to analyze the flight booking dataset from the “Ease My Trip” website,
+using various statistical hypothesis tests to see which variables affect the most. Then, machine
+learning algorithms will predict the prices and compare them to see which is more effective for this task.    
+        
          """)
 
 
