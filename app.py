@@ -191,9 +191,9 @@ def model_creation():
     X = pd.concat([inputs_dataset[numeric_cols], inputs_dataset[encoder_cols]], axis=1)
     y = targets_set
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20, random_state=42)
-    return X_train, X_test, y_train, y_test
+    return X_train, X_test, y_train, y_test, numeric_cols,categorical_cols,encoder_cols
 
-X_train, X_test, y_train, y_test = model_creation()
+X_train, X_test, y_train, y_test, numeric_cols,categorical_cols,encoder_cols = model_creation()
 
 def linear_regression():
     lr = LinearRegression()
@@ -283,8 +283,15 @@ def table_results():
     rmse_values = [lr_rmse, dtr_rmse, rf_rmse]
     mae_values = [lr_mae, dtr_mae, rf_mae]
     r2_values = [lr_score, dtr_score, rf_score]
-    comparission = pd.DataFrame({"algorithm": algorithm_names, "MSE": mse_values, "RMSE": rmse_values, "MAE": mae_values, "R2": r2_values})
-    return comparission
+    comparison = pd.DataFrame({
+        "algorithm": algorithm_names,
+        "MSE": mse_values,
+        "RMSE": rmse_values,
+        "MAE": mae_values,
+        "R2": r2_values
+    })
+    comparison = comparison.round(2)
+    return comparison
 
 table_result = table_results()
 st.dataframe(table_result)
@@ -296,3 +303,4 @@ Finally, Linear Regression with an R2 score of 0.91
 We found that there is no single variable that can be used as a predictor for the price and that
 actually, it is a combination of variables that make the prediction possible.  
          """)
+
