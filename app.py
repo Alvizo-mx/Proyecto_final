@@ -165,6 +165,10 @@ sns.countplot(ax = axis[1, 1], data = df_train, x = "stops", hue = "class").set(
 sns.countplot(ax = axis[1, 2], data = df_train, x = "arrival_time", hue = "class").set(ylabel = None)
 st.pyplot(fig)
 
+st.title(f'Bivariate analysis of categorical & numerical variables')
+fig = sns.pairplot(data=df_train, hue='class')
+st.pyplot(fig)
+
 st.title(f'machine learning model')
 st.title(f'Linear regression')
 
