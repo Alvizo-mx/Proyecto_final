@@ -1,6 +1,7 @@
 # Step 0. Import libraries, custom modules and logging
 import kagglehub
 import streamlit as st 
+from PIL import Image
 # Data -----------------------------------------------------------------
 import pandas as pd
 import numpy as np
@@ -295,6 +296,8 @@ def table_results():
 
 table_result = table_results()
 st.dataframe(table_result)
+image = Image.open('permutation_importance.jpg.png') 
+st.image(image, caption='permutation importance', use_container_width=True)
 st.write(f"""
 For this dataset, the model that best predicts the prices of the flights is the Random
 Forest Regression which has an R2 score of 0.98.
