@@ -24,8 +24,9 @@ from sklearn.preprocessing import (OneHotEncoder,
 
 st.markdown(""" <h1 style='text-align: center;'>Price Flight Predictions</h1> """, unsafe_allow_html=True)
 st.markdown(""" <h2 style='text-align: center;'>Using Machine learning </h2> """, unsafe_allow_html=True)
-
 st.write('Jessica Miramontes & Daniel Alvizo')
+image = Image.open('avion2.webp') 
+st.image(image, caption='avion', use_container_width=True)
 st.markdown("""
     <div style="text-align: center;">
         The purpose of this study is to analyze the flight booking dataset from the “Ease My Trip” website,
